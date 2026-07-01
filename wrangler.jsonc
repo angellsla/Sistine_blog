@@ -4,8 +4,8 @@
 	"compatibility_flags": ["nodejs_compat"],
 	"assets": {
 		"directory": "./dist"
-	}
-    "observability": {
+	},
+	"observability": {
 		"enabled": false
-    }
+	}
 }
