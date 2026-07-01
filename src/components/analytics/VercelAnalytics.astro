@@ -1,0 +1,39 @@
+---
+/**
+ * Vercel Web Analytics 组件
+ *
+ * 用于在页面中集成 Vercel Web Analytics 跟踪脚本
+ *
+ * @see https://vercel.com/docs/analytics/quickstart
+ */
+
+export interface Props {
+	enabled: boolean; // 是否启用 Analytics
+	mode?: "auto" | "development" | "production"; // Analytics 模式
+	debug?: boolean; // 是否启用调试模式
+}
+
+const { enabled, mode = "auto", debug = false } = Astro.props;
+
+// 如果未启用，不渲染任何内容
+if (!enabled) {
+	return null;
+}
+---
+
+{/* Vercel Web Analytics Script */}
+<script is:inline define:vars={{ mode, debug }}>
+	(function() {
+		// 动态导入 @vercel/analytics 并初始化
+		import('@vercel/analytics').then((analytics) => {
+			if (typeof analytics.inject === 'function') {
+				analytics.inject({
+					mode: mode,
+					debug: debug
+				});
+			}
+		}).catch((error) => {
+			console.error('Failed to load Vercel Analytics:', error);
+		});
+	})();
+</script>

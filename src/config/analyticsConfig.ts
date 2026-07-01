@@ -5,6 +5,15 @@ export const analyticsConfig: AnalyticsConfig = {
 	googleAnalyticsId: "",
 	// Microsoft Clarity ID
 	microsoftClarityId: "",
+	// Vercel Web Analytics 配置
+	vercelAnalytics: {
+		// 是否启用 Vercel Web Analytics，设置为 true 后将在页面中加载 Analytics 脚本
+		enabled: false,
+		// Analytics 模式：'auto'(自动根据环境选择) | 'development' | 'production'
+		mode: "auto",
+		// 是否启用调试模式，在控制台输出详细日志
+		debug: false,
+	},
 	// Umami 统计配置
 	umamiAnalytics: {
 		// Umami Website ID

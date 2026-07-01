@@ -24,8 +24,7 @@ export const friendsPageConfig: FriendsPageConfig = {
 export const friendsConfig: FriendLink[] = [
 	{
 		title: "INKT",
-		imgurl:
-			"https://image.inktandwkx.top:50000/i/2026/06/28/zigpix.png",
+		imgurl: "https://image.inktandwkx.top:50000/i/2026/06/28/zigpix.png",
 		desc: "INKT's 折腾日常",
 		siteurl: "https://blog.inktandwkx.top:50000",
 		tags: ["Blog"],

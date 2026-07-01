@@ -15,17 +15,10 @@ export const siteConfig: SiteConfig = {
 	site_url: "https://blog.sistinelove.cn",
 
 	// 站点描述
-	description:
-		"Sistine_Love的个人博客，记录生活、分享技术、ACGN等内容。",
+	description: "Sistine_Love的个人博客，记录生活、分享技术、ACGN等内容。",
 
 	// 站点关键词
-	keywords: [
-		"Astro",
-		"ACGN",
-		"博客",
-		"技术博客",
-		"静态博客",
-	],
+	keywords: ["Astro", "ACGN", "博客", "技术博客", "静态博客"],
 
 	// 主题色
 	themeColor: {

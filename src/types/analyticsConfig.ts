@@ -1,6 +1,11 @@
 export type AnalyticsConfig = {
 	googleAnalyticsId?: string; // Google Analytics ID
 	microsoftClarityId?: string; // Microsoft Clarity ID
+	vercelAnalytics?: {
+		enabled?: boolean; // 是否启用 Vercel Web Analytics
+		mode?: "auto" | "development" | "production"; // Analytics 模式，默认 'auto'
+		debug?: boolean; // 是否启用调试模式，默认 false
+	};
 	umamiAnalytics?: {
 		websiteId?: string; // Umami Website ID
 		scriptUrl?: string; // Umami JS地址，支持使用自建

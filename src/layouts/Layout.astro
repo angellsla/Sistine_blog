@@ -3,6 +3,7 @@ import GoogleAnalytics from "@components/analytics/GoogleAnalytics.astro";
 import La51Analytics from "@components/analytics/La51Analytics.astro";
 import MicrosoftClarity from "@components/analytics/MicrosoftClarity.astro";
 import UmamiAnalytics from "@components/analytics/UmamiAnalytics.astro";
+import VercelAnalytics from "@components/analytics/VercelAnalytics.astro";
 import FancyboxManager from "@components/features/FancyboxManager.astro";
 import FontSetup from "@components/features/FontSetup.astro";
 import MusicManager from "@components/features/MusicManager.astro";
@@ -96,6 +97,13 @@ const siteLang = lang.replace("_", "-");
     )}
     {analyticsConfig?.microsoftClarityId && (
             <MicrosoftClarity clarityId={analyticsConfig.microsoftClarityId} />
+    )}
+    {analyticsConfig?.vercelAnalytics?.enabled && (
+            <VercelAnalytics
+              enabled={analyticsConfig.vercelAnalytics.enabled}
+              mode={analyticsConfig.vercelAnalytics.mode}
+              debug={analyticsConfig.vercelAnalytics.debug}
+            />
     )}
         {analyticsConfig?.umamiAnalytics?.websiteId && (
           <UmamiAnalytics
@@ -1625,7 +1633,7 @@ function disableAnimation() {
       const topContainer = sticky.previousElementSibling as HTMLElement | null;
       const hasVisibleTop = !!topContainer && topContainer.offsetHeight > 1;
 
-      // swup 从非文章页切换到文章页时，top 容器可能残留 mb-4，需要按可见性动态修正
+      // swup 从非文章页切换到文章页时，top 容器可能残留 mb-4，需要按可见性动���修正
       if (topContainer) {
         if (hasVisibleTop !== sidebarStickyState[side].hasVisibleTop) {
           sidebarStickyState[side].hasVisibleTop = hasVisibleTop;
