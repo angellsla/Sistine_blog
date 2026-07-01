@@ -6,6 +6,6 @@
 		"directory": "./dist"
 	},
 	"observability": {
-		"enabled": false
+		"enabled": true
 	}
 }
